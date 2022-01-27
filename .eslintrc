@@ -1,0 +1,26 @@
+{
+  "extends": [ "wesbos" ],
+
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
+
+  "rules": {
+    "no-shadow":"off",
+    "react/prop-types": "off",
+    // this rule can enforce or disallow the use of braces around arrow function body.
+    // "always", "as-needed", "never"
+    // the never settings says arrow functions never have braces around the function body
+    "arrow-body-style": ["warn", "always"],
+    "no-use-before-define": "off",
+    "array-callback-return": "off",
+    "no-sequences": "off",
+    "default-param-last": "off",
+    "react/destructuring-assignment": "warn",
+    "prettier/prettier": ["warn", {"trailingComma": "none"}]
+  }
+}
