@@ -1,14 +1,6 @@
 {
   "extends": [ "wesbos" ],
 
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["src"]
-      }
-    }
-  },
-
   "rules": {
     "no-shadow":"off",
     "react/prop-types": "off",
@@ -21,6 +13,7 @@
     "no-sequences": "off",
     "default-param-last": "off",
     "react/destructuring-assignment": "warn",
-    "prettier/prettier": ["warn", {"trailingComma": "none"}]
+    "prettier/prettier": ["warn", {"trailingComma": "none"}],
+    "import/no-extraneous-dependencies": "off"
   }
 }
