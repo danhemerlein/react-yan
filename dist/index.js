@@ -1,46 +1,24 @@
-function e(e) {
-  return e && typeof e === 'object' && 'default' in e ? e : { default: e };
-}
-Object.defineProperty(exports, '__esModule', { value: !0 });
-const t = e(require('styled-components'));
+"use strict";function e(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}Object.defineProperty(exports,"__esModule",{value:!0});var t=e(require("styled-components"));const n={fontFamily:"sans-serif",headlineOneFontSize:"3.2rem",headlineTwoFontSize:"2.4rem",headlineThreeFontSize:"2.4rem",paragraphFontSize:"1.6rem"},i={},o=e=>i.hasOwnProperty(e)?i[e]:n[e],a=t.default.h1`
+  font-family: ${o("fontFamily")};
 
-const n = {
-  fontFamily: 'sans-serif',
-  headlineOne: { fontSize: '3.2rem' },
-  headlineTwo: { fontSize: '2.4rem' },
-  headlineThree: { fontSize: '2.4rem' },
-  paragraph: { fontSize: '1.6rem' }
-};
-const i = t.default.h1`
-  font-family: ${n.fontFamily};
-  font-size: ${n.headlineOne.fontSize};
-`;
-const o = t.default.h2`
-  font-family: ${n.fontFamily};
-  font-size: ${n.headlineTwo.fontSize};
+  font-size: ${o("headlineOneFontSize")};
 
-  ${({ textAlign: e }) => {
-    return e && `text-align: ${e}`;
-  }};
-`;
-const a = t.default.h2`
-  font-family: ${n.fontFamily};
-  font-size: ${n.headlineThree.fontSize};
+  ${({textAlign:e})=>e&&`text-align: ${e}`};
+`,l=t.default.h2`
+  font-family: ${o("fontFamily")};
+  font-size: ${n.headlineTwoFontSize};
 
-  ${({ textAlign: e }) => {
-    return e && `text-align: ${e}`;
-  }};
-`;
-const f = t.default.p`
-  font-family: ${n.fontFamily};
-  font-size: ${n.paragraph.fontSize};
+  ${({textAlign:e})=>e&&`text-align: ${e}`};
+`,r=t.default.h2`
+  font-family: ${o("fontFamily")};
+  font-size: ${n.headlineThreeFontSize};
 
-  ${({ lowercase: e }) => {
-    return e && 'text-transform: lowercase';
-  }};
+  ${({textAlign:e})=>e&&`text-align: ${e}`};
+`,f=t.default.p`
+  font-family: ${o("fontFamily")};
+  font-size: ${n.paragraphFontSize};
 
-  ${({ textAlign: e }) => {
-    return e && `text-align: ${e}`;
-  }};
-`;
-(exports.H1 = i), (exports.H2 = o), (exports.H3 = a), (exports.P = f);
+  ${({textAlign:e})=>e&&`text-align: ${e}`};
+
+  ${({lowercase:e})=>e&&"text-transform: lowercase"};
+`;exports.H1=a,exports.H2=l,exports.H3=r,exports.P=f;

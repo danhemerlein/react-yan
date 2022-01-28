@@ -1,21 +1,24 @@
-import e from"styled-components";const t={fontFamily:"sans-serif",headlineOne:{fontSize:"3.2rem"},headlineTwo:{fontSize:"2.4rem"},headlineThree:{fontSize:"2.4rem"},paragraph:{fontSize:"1.6rem"}},n=e.h1`
-  font-family: ${t.fontFamily};
-  font-size: ${t.headlineOne.fontSize};
-`,i=e.h2`
-  font-family: ${t.fontFamily};
-  font-size: ${t.headlineTwo.fontSize};
+import e from"styled-components";const t={fontFamily:"sans-serif",headlineOneFontSize:"3.2rem",headlineTwoFontSize:"2.4rem",headlineThreeFontSize:"2.4rem",paragraphFontSize:"1.6rem"},n={},i=e=>n.hasOwnProperty(e)?n[e]:t[e],o=e.h1`
+  font-family: ${i("fontFamily")};
+
+  font-size: ${i("headlineOneFontSize")};
 
   ${({textAlign:e})=>e&&`text-align: ${e}`};
-`,o=e.h2`
-  font-family: ${t.fontFamily};
-  font-size: ${t.headlineThree.fontSize};
+`,a=e.h2`
+  font-family: ${i("fontFamily")};
+  font-size: ${t.headlineTwoFontSize};
 
   ${({textAlign:e})=>e&&`text-align: ${e}`};
-`,a=e.p`
-  font-family: ${t.fontFamily};
-  font-size: ${t.paragraph.fontSize};
+`,l=e.h2`
+  font-family: ${i("fontFamily")};
+  font-size: ${t.headlineThreeFontSize};
+
+  ${({textAlign:e})=>e&&`text-align: ${e}`};
+`,f=e.p`
+  font-family: ${i("fontFamily")};
+  font-size: ${t.paragraphFontSize};
+
+  ${({textAlign:e})=>e&&`text-align: ${e}`};
 
   ${({lowercase:e})=>e&&"text-transform: lowercase"};
-
-  ${({textAlign:e})=>e&&`text-align: ${e}`};
-`;export{n as H1,i as H2,o as H3,a as P};
+`;export{o as H1,a as H2,l as H3,f as P};
