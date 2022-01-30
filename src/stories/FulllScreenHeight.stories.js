@@ -4,12 +4,12 @@ import { P } from '../components/Typography';
 
 export default {
   title: 'FullScreenHeight',
-  component: FullScreenHeight
+  component: FullScreenHeightStory
 };
 
-export const Primary = () => {
+export const FullScreenHeightStory = () => {
   return (
-    <FullScreenHeight>
+    <FullScreenHeight direction="column" offset={50} unsetBreakpoint="none">
       <P>content</P>
       <P>content</P>
       <P>content</P>

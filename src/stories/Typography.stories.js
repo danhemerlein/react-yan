@@ -3,10 +3,10 @@ import { H1, H2, H3, H4, H5, H6, P } from '../components/Typography';
 
 export default {
   title: 'Typography',
-  component: Primary
+  component: TypographyStory
 };
 
-export const Primary = () => {
+export const TypographyStory = () => {
   return (
     <>
       <H1>Headline One</H1>

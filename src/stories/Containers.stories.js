@@ -4,10 +4,10 @@ import { P } from '../components/Typography';
 
 export default {
   title: 'FlexContainer',
-  component: FlexContainer
+  component: FlexContainerStory
 };
 
-export const Primary = () => {
+export const FlexContainerStory = () => {
   return (
     <FlexContainer justify="center" items="center" direction="column">
       <P>content</P>

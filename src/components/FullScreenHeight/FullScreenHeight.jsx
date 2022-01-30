@@ -1,42 +1,20 @@
 import { use100vh } from 'react-div-100vh';
 import { useMediaQuery } from 'react-responsive';
-import styled from 'styled-components';
 import config from '../../config';
+import { FlexContainer } from '../FlexContainer';
 
 const BREAKPOINT = config.breakpoints;
 
-const Container = styled.div`
-  height: 100%;
-  display: flex;
-
-  ${({ height }) => {
-    return height && `height: ${height};`;
-  }}
-
-  ${({ justify }) => {
-    return justify && `justify-content: ${justify};`;
-  }}
-  ${({ items }) => {
-    return items && `align-items: ${items};`;
-  }}
-
-  ${({ direction }) => {
-    return direction && `flex-direction: ${direction};`;
-  }}
-`;
+console.log(BREAKPOINT);
 
 export const FullScreenHeight = ({
   children,
   unsetBreakpoint,
   justify,
   items,
-  direction
+  direction,
+  offset
 }) => {
-  const PADDING = 32;
-  const HEADER_HEIGHT = 28;
-  const FOOTER_HEIGHT = 22;
-
-  const offset = PADDING + HEADER_HEIGHT + FOOTER_HEIGHT;
   const height = use100vh();
 
   let breakpoint;
@@ -59,13 +37,13 @@ export const FullScreenHeight = ({
   };
 
   return (
-    <Container
+    <FlexContainer
       justify={justify}
       items={items}
       direction={direction}
       height={generateHeight(breakpoint, height, offset)}
     >
       {children}
-    </Container>
+    </FlexContainer>
   );
 };
