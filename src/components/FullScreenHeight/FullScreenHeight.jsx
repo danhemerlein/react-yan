@@ -1,11 +1,9 @@
 import { use100vh } from 'react-div-100vh';
 import { useMediaQuery } from 'react-responsive';
-import config from '../../config';
+import { checkForProperty } from '../../utils';
 import { FlexContainer } from '../FlexContainer';
 
-const BREAKPOINT = config.breakpoints;
-
-console.log(BREAKPOINT);
+const BREAKPOINT = checkForProperty('breakpoints');
 
 export const FullScreenHeight = ({
   children,
