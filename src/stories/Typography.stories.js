@@ -1,10 +1,12 @@
-import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { H1, H2, H3, H4, H5, H6, P } from '../components/Typography';
 
-const stories = storiesOf('App Test', module);
+export default {
+  title: 'Typography',
+  component: Primary
+};
 
-stories.add('App', () => {
+export const Primary = () => {
   return (
     <>
       <H1>Headline One</H1>
@@ -16,4 +18,4 @@ stories.add('App', () => {
       <P>Paragraph</P>
     </>
   );
-});
+};
