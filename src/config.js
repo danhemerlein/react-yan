@@ -10,7 +10,14 @@ const config = {
   headlineFiveFontSize: '1.6rem',
   headlineSixFontSize: '1.6rem',
 
-  paragraphFontSize: '1.6rem'
+  paragraphFontSize: '1.6rem',
+
+  breakpoints: {
+    mobile: 320,
+    tablet: 720,
+    desktop: 1024,
+    'desktop-max': 1440
+  }
 };
 
 export default config;

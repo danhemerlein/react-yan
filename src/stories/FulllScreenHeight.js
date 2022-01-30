@@ -1,18 +1,18 @@
 import React from 'react';
-import { FlexContainer } from '../components/FlexContainer';
+import { FullScreenHeight } from '../components/FullScreenHeight';
 import { P } from '../components/Typography';
 
 export default {
-  title: 'FlexContainer',
-  component: FlexContainer
+  title: 'FullScreenHeight',
+  component: FullScreenHeight
 };
 
 export const Primary = () => {
   return (
-    <FlexContainer justify="center" items="center" direction="column">
+    <FullScreenHeight>
       <P>content</P>
       <P>content</P>
       <P>content</P>
-    </FlexContainer>
+    </FullScreenHeight>
   );
 };
