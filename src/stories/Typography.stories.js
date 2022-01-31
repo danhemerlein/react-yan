@@ -8,7 +8,7 @@ export default {
 export const TypographyStory = () => {
   return (
     <>
-      <H1>Headline One</H1>
+      <H1 textAlign="center">Headline One</H1>
       <H2>Headline Two</H2>
       <H3>Headline Three</H3>
       <H4>Headline Four</H4>

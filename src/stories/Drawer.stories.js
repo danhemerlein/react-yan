@@ -3,7 +3,7 @@
 // import { ModalTrigger } from '../components/Modal/ModalTrigger';
 
 export default {
-  title: 'Modal',
+  title: 'Drawer',
   component: ModalStory
 };
 
