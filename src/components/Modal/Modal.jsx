@@ -77,7 +77,13 @@ const InputContainer = styled.div`
   display: inline-flex;
 `;
 
-const Modal = ({ clickHandler, navOpen, mode, activeTrap, unmountTrap }) => {
+export const Modal = ({
+  clickHandler,
+  navOpen,
+  mode,
+  activeTrap,
+  unmountTrap
+}) => {
   const dispatch = useDispatch();
 
   const handleRadioChange = (event) => {
@@ -143,5 +149,3 @@ const Modal = ({ clickHandler, navOpen, mode, activeTrap, unmountTrap }) => {
     </Nav>
   );
 };
-
-export default Modal;

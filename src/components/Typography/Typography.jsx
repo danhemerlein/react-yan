@@ -1,15 +1,31 @@
 import styled from 'styled-components';
-import { checkForProperty } from '../../utils';
+import { useOverrideContext } from '../../context/OverrideContext';
+import { checkForOverride, checkForProperty } from '../../utils';
 
-export const H1 = styled.h1`
-  font-family: ${checkForProperty('fontFamily')};
-
-  font-size: ${checkForProperty('headlineOneFontSize')};
-
+const HeadlineOne = styled.h1`
   ${({ textAlign }) => {
     return textAlign && `text-align: ${textAlign}`;
   }};
+
+  ${({ overrides }) => {
+    return (
+      overrides &&
+      `
+      font-family: ${checkForOverride('fontFamily', overrides)};
+
+      font-size: ${checkForOverride('headlineOneFontSize', overrides)};
+    `
+    );
+  }};
 `;
+
+export const H1 = ({ textAlign, children }) => {
+  return (
+    <HeadlineOne textAlign={textAlign} overrides={useOverrideContext()}>
+      {children}
+    </HeadlineOne>
+  );
+};
 
 export const H2 = styled.h2`
   font-family: ${checkForProperty('fontFamily')};

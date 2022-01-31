@@ -1,3 +1,4 @@
+import { OverrideProvider } from "../src/context/OverrideContext";
 import GlobalReset from "../src/global";
 
 export const parameters = {
@@ -15,10 +16,12 @@ export const decorators = [
   (Story) => {
     return (
       <>
-        <GlobalReset />
-        <div className="storybook-wrapper">
-          <Story />
-        </div>
+        <OverrideProvider overrides={{'fontFamily': 'serif'}}>
+          <GlobalReset />
+          <div className="storybook-wrapper">
+            <Story />
+          </div>
+        </OverrideProvider>
       </>
     );
   },

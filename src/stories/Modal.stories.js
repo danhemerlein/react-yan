@@ -1,7 +1,7 @@
 import React from 'react';
-import { Modal } from '../components/Modal/Modal';
-import { ModalOverlay } from '../components/Modal/ModalOverlay';
-import { ModalTrigger } from '../components/Modal/ModalTrigger';
+// import { Modal } from '../components/Modal/Modal';
+// import { ModalOverlay } from '../components/Modal/ModalOverlay';
+// import { ModalTrigger } from '../components/Modal/ModalTrigger';
 
 export default {
   title: 'Modal',
@@ -11,10 +11,10 @@ export default {
 export const ModalStory = () => {
   return (
     <>
-      <ModalTrigger />
+      {/* <ModalTrigger />
       {/* <ModalOverlay modalOpen /> */}
-      <ModalOverlay />
-      <Modal />
+      {/* <ModalOverlay /> */}
+      {/* <Modal />  */}~ fuck ~
     </>
   );
 };
