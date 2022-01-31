@@ -1,6 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 import { useOverrideContext } from '../../context/OverrideContext';
-import { checkForOverride, checkForProperty } from '../../utils';
+import { checkForOverride } from '../../utils';
 
 const HeadlineOne = styled.h1`
   ${({ textAlign }) => {
@@ -28,8 +29,8 @@ export const H1 = ({ textAlign, children }) => {
 };
 
 export const H2 = styled.h2`
-  font-family: ${checkForProperty('fontFamily')};
-  font-size: ${checkForProperty('headlineTwoFontSize')};
+  font-family: ${checkForOverride('fontFamily', {})};
+  font-size: ${checkForOverride('headlineTwoFontSize', {})};
 
   ${({ textAlign }) => {
     return textAlign && `text-align: ${textAlign}`;
@@ -37,8 +38,8 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h2`
-  font-family: ${checkForProperty('fontFamily')};
-  font-size: ${checkForProperty('headlineThreeFontSize')};
+  font-family: ${checkForOverride('fontFamily', {})};
+  font-size: ${checkForOverride('headlineThreeFontSize', {})};
 
   ${({ textAlign }) => {
     return textAlign && `text-align: ${textAlign}`;
@@ -46,8 +47,8 @@ export const H3 = styled.h2`
 `;
 
 export const H4 = styled.h4`
-  font-family: ${checkForProperty('fontFamily')};
-  font-size: ${checkForProperty('headlineFourFontSize')};
+  font-family: ${checkForOverride('fontFamily', {})};
+  font-size: ${checkForOverride('headlineFourFontSize', {})};
 
   ${({ textAlign }) => {
     return textAlign && `text-align: ${textAlign}`;
@@ -55,8 +56,8 @@ export const H4 = styled.h4`
 `;
 
 export const H5 = styled.h5`
-  font-family: ${checkForProperty('fontFamily')};
-  font-size: ${checkForProperty('headlineFiveFontSize')};
+  font-family: ${checkForOverride('fontFamily', {})};
+  font-size: ${checkForOverride('headlineFiveFontSize', {})};
 
   ${({ textAlign }) => {
     return textAlign && `text-align: ${textAlign}`;
@@ -64,8 +65,8 @@ export const H5 = styled.h5`
 `;
 
 export const H6 = styled.h6`
-  font-family: ${checkForProperty('fontFamily')};
-  font-size: ${checkForProperty('headlineSixFontSize')};
+  font-family: ${checkForOverride('fontFamily', {})};
+  font-size: ${checkForOverride('headlineSixFontSize', {})};
 
   ${({ textAlign }) => {
     return textAlign && `text-align: ${textAlign}`;
@@ -73,8 +74,8 @@ export const H6 = styled.h6`
 `;
 
 export const P = styled.p`
-  font-family: ${checkForProperty('fontFamily')};
-  font-size: ${checkForProperty('paragraphFontSize')};
+  font-family: ${checkForOverride('fontFamily', {})};
+  font-size: ${checkForOverride('paragraphFontSize', {})};
 
   ${({ textAlign }) => {
     return textAlign && `text-align: ${textAlign}`;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FullScreenHeight } from '../components/FullScreenHeight';
 import { P } from '../components/Typography';
 
