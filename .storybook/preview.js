@@ -1,4 +1,4 @@
-import { OverrideProvider } from "../src/context/OverrideContext";
+import { ReactYanOverrideProvider } from "../src/context/OverrideContext";
 import GlobalReset from "../src/global";
 
 export const parameters = {
@@ -16,12 +16,12 @@ export const decorators = [
   (Story) => {
     return (
       <>
-        <OverrideProvider overrides={{'fontFamily': 'serif'}}>
+        <ReactYanOverrideProvider overrides={{'fontFamily': 'serif'}}>
           <GlobalReset />
           <div className="storybook-wrapper">
             <Story />
           </div>
-        </OverrideProvider>
+        </ReactYanOverrideProvider>
       </>
     );
   },

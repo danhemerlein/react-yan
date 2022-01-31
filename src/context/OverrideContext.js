@@ -7,7 +7,7 @@ export const useOverrideContext = () => {
   return context;
 };
 
-export const OverrideProvider = ({ children, overrides }) => {
+export const ReactYanOverrideProvider = ({ children, overrides }) => {
   return (
     <OverrideContext.Provider value={overrides}>
       {children}
