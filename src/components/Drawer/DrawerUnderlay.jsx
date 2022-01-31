@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Overlay = styled.div`
+const Underlay = styled.div`
   display: none;
   position: fixed;
   top: 0;
@@ -16,11 +16,11 @@ const Overlay = styled.div`
   }};
 `;
 
-export const ModalOverlay = ({ modalOpen, clickHandler, unmountTrap }) => {
+export const DrawerUnderlay = ({ modalOpen, clickHandler, unmountTrap }) => {
   const handleClick = () => {
     clickHandler();
     unmountTrap();
   };
 
-  return <Overlay modalOpen={modalOpen} onClick={handleClick} />;
+  return <Underlay modalOpen={modalOpen} onClick={handleClick} />;
 };

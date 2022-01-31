@@ -10,7 +10,7 @@ const Button = styled.button`
   padding-right: 0;
 `;
 
-export const ModalTrigger = ({ clickHandler, mountTrap }) => {
+export const DrawerTrigger = ({ clickHandler, mountTrap }) => {
   const handleClick = () => {
     clickHandler();
     mountTrap();
