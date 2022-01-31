@@ -17,7 +17,7 @@ const Underlay = styled.div`
   }};
 `;
 
-export const DrawerUnderlay = ({ modalOpen, clickHandler, unmountTrap }) => {
+const DrawerUnderlay = ({ modalOpen, clickHandler, unmountTrap }) => {
   const handleClick = () => {
     clickHandler();
     unmountTrap();
@@ -25,3 +25,5 @@ export const DrawerUnderlay = ({ modalOpen, clickHandler, unmountTrap }) => {
 
   return <Underlay modalOpen={modalOpen} onClick={handleClick} />;
 };
+
+export default DrawerUnderlay;

@@ -6,7 +6,7 @@ import { FlexContainer } from '../FlexContainer';
 
 const BREAKPOINT = checkForOverride('breakpoints');
 
-export const FullScreenHeight = ({
+const FullScreenHeight = ({
   children,
   unsetBreakpoint,
   justify,
@@ -46,3 +46,5 @@ export const FullScreenHeight = ({
     </FlexContainer>
   );
 };
+
+export default FullScreenHeight;

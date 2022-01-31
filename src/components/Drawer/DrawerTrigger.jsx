@@ -11,7 +11,7 @@ const Button = styled.button`
   padding-right: 0;
 `;
 
-export const DrawerTrigger = ({ clickHandler, mountTrap }) => {
+const DrawerTrigger = ({ clickHandler, mountTrap }) => {
   const handleClick = () => {
     clickHandler();
     mountTrap();
@@ -23,3 +23,5 @@ export const DrawerTrigger = ({ clickHandler, mountTrap }) => {
     </Button>
   );
 };
+
+export default DrawerTrigger;

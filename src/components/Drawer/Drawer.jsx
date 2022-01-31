@@ -1,10 +1,9 @@
-import CloseIcon from 'components/base/icons/Close';
 import FocusTrap from 'focus-trap-react';
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { FlexContainer, P } from 'styles/elements';
-import { modalTransition } from 'styles/utilities/variables';
 import whatInput from 'what-input';
+import { checkForOverride } from '../../utils';
+import FlexContainer from '../FlexContainer';
 
 const Nav = styled.div`
   z-index: 5;
@@ -31,7 +30,12 @@ const Nav = styled.div`
   border-right: 1px solid;
 
   visibility: hidden;
-  transition: ${modalTransition};
+
+  ${(props) => {
+    return `
+      transition: ${checkForOverride('drawerTransition', props.overrides)};
+    `;
+  }}
 
   ${({ navOpen }) => {
     return (
@@ -50,46 +54,11 @@ const StyledCloseButton = styled.button`
   padding: 0;
   border: 0;
   background: transparent;
-  width: ${remHelper[24]};
-  height: ${remHelper[24]};
+  width: 2.4rem;
+  height: 2.4rem;
 `;
 
-const StyledHR = styled.hr`
-  width: 50%;
-  border: 1px solid;
-  border-color: ${({ theme }) => {
-    return theme.border;
-  }};
-
-  margin-bottom: ${remHelper[16]};
-`;
-
-const RadioContainer = styled.div`
-  margin-top: ${remHelper[8]};
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
-const InputContainer = styled.div`
-  margin-top: ${remHelper[16]};
-  height: 100%;
-  display: inline-flex;
-`;
-
-export const Modal = ({
-  clickHandler,
-  navOpen,
-  mode,
-  activeTrap,
-  unmountTrap
-}) => {
-  const dispatch = useDispatch();
-
-  const handleRadioChange = (event) => {
-    dispatch(setSiteTheme(event.target.value));
-  };
-
+export const Drawer = ({ clickHandler, navOpen, activeTrap, unmountTrap }) => {
   const closeButtonRef = useRef();
 
   useEffect(() => {
@@ -118,31 +87,9 @@ export const Modal = ({
 
             <FlexContainer items="flex-end" justify="flex-end">
               <StyledCloseButton ref={closeButtonRef} onClick={handleClick}>
-                <CloseIcon width="2.4rem" height="2.4rem" />
+                close drawer
               </StyledCloseButton>
             </FlexContainer>
-
-            {/* site navigation */}
-
-            <nav role="navigation">
-              <FlexContainer
-                as="ul"
-                items="center"
-                justify="center"
-                direction="column"
-              />
-            </nav>
-
-            <StyledHR />
-
-            {/* color modes */}
-
-            <fieldset>
-              <P textAlign="center" as="legend">
-                color mode
-              </P>
-              <RadioContainer />
-            </fieldset>
           </div>
         </FocusTrap>
       )}

@@ -1,19 +1,16 @@
-// import { Modal } from '../components/Modal/Modal';
-// import { ModalOverlay } from '../components/Modal/ModalOverlay';
-// import { ModalTrigger } from '../components/Modal/ModalTrigger';
+import DrawerTrigger from '../components/Drawer/DrawerTrigger';
+import DrawerUnderlay from '../components/Drawer/DrawerUnderlay';
 
 export default {
   title: 'Drawer',
-  component: ModalStory
+  component: DrawerStory
 };
 
-export const ModalStory = () => {
+export const DrawerStory = () => {
   return (
     <>
-      {/* <ModalTrigger />
-      {/* <ModalOverlay modalOpen /> */}
-      {/* <ModalOverlay /> */}
-      {/* <Modal />  */}~ fuck ~
+      <DrawerTrigger />
+      <DrawerUnderlay />
     </>
   );
 };

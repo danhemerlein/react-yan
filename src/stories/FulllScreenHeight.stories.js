@@ -1,45 +1,14 @@
-import { FullScreenHeight } from '../components/FullScreenHeight';
+import FullScreenHeight from '../components/FullScreenHeight/index.jsx';
 import { P } from '../components/Typography';
 
 export default {
-  title: 'FullScreenHeight'
+  title: 'FullScreenHeight',
+  component: FullScreenHeightStory
 };
 
-export const OffsetUnset = () => {
+export const FullScreenHeightStory = () => {
   return (
-    <FullScreenHeight direction="column" offset={50} unsetBreakpoint="mobile">
-      <P>content</P>
-      <P>content</P>
-      <P>content</P>
-    </FullScreenHeight>
-  );
-};
-
-export const OffsetNoUnset = () => {
-  return (
-    <FullScreenHeight direction="column" offset={50} unsetBreakpoint="none">
-      <P>content</P>
-      <P>content</P>
-      <P>content</P>
-    </FullScreenHeight>
-  );
-};
-
-export const NoOffsetUnset = () => {
-  return (
-    <FullScreenHeight direction="column" offset={0} unsetBreakpoint="tablet">
-      <P>content</P>
-      <P>content</P>
-      <P>content</P>
-    </FullScreenHeight>
-  );
-};
-
-export const NoOffsetNoUnset = () => {
-  return (
-    <FullScreenHeight direction="column" offset={0} unsetBreakpoint="none">
-      <P>content</P>
-      <P>content</P>
+    <FullScreenHeight>
       <P>content</P>
     </FullScreenHeight>
   );

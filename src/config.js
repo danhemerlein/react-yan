@@ -12,6 +12,8 @@ const config = {
 
   paragraphFontSize: '1.6rem',
 
+  drawerTransition: 'transform 450ms cubic-bezier(0.23, 1, 0.32, 1)',
+
   breakpoints: {
     mobile: 320,
     tablet: 720,
