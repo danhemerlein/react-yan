@@ -1,6 +1,5 @@
 import FullScreenHeight from '../components/FullScreenHeight';
 import { P } from '../components/Typography';
-import { useOverrideContext } from '../context/OverrideContext';
 
 export default {
   title: 'Fulll Screen Height',
@@ -18,7 +17,6 @@ export default {
 const Template = ({ unsetBreakpoint, offset }) => {
   return (
     <FullScreenHeight
-      overrides={useOverrideContext()}
       unsetBreakpoint={unsetBreakpoint}
       offset={offset}
       direction="column"

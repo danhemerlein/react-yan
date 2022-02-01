@@ -2,22 +2,19 @@ import FocusTrap from 'focus-trap-react';
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import whatInput from 'what-input';
+import { useOverrideContext } from '../../context/OverrideContext';
 import { checkForOverride } from '../../utils';
-import FlexContainer from '../FlexContainer';
 
-const Nav = styled.div`
-  z-index: 5;
+const StyledDrawer = styled.div`
   transform: translateX(-226px);
+  width: 210px;
 
   position: absolute;
   left: 0;
   top: 0;
 
-  width: 210px;
-  height: 100vh;
-
+  height: 100px;
   display: block;
-
   overflow-y: scroll;
 
   display: flex;
@@ -33,66 +30,64 @@ const Nav = styled.div`
 
   ${(props) => {
     return `
+      z-index: ${checkForOverride('drawerZIndex', props.overrides)};
       transition: ${checkForOverride('drawerTransition', props.overrides)};
     `;
   }}
 
-  ${({ navOpen }) => {
+  ${({ open }) => {
     return (
-      navOpen &&
+      open &&
       `
-      visibility: visible;
-      transform: translateX(0);
-      position: fixed;
-  `
+        visibility: visible;
+        transform: translateX(0);
+        position: fixed;
+      `
     );
   }};
 `;
 
-const StyledCloseButton = styled.button`
-  cursor: pointer;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  width: 2.4rem;
-  height: 2.4rem;
-`;
-
-export const Drawer = ({ clickHandler, navOpen, activeTrap, unmountTrap }) => {
+export const Drawer = ({
+  clickHandler,
+  drawerOpen,
+  activeTrap,
+  unmountTrap,
+  id
+}) => {
   const closeButtonRef = useRef();
 
   useEffect(() => {
-    if (whatInput.ask() === 'keyboard' && navOpen) {
+    if (whatInput.ask() === 'keyboard' && drawerOpen) {
       closeButtonRef.current.focus();
     }
-  }, [navOpen]);
+  }, [drawerOpen]);
 
   const handleClick = () => {
     clickHandler();
     unmountTrap();
   };
 
+  const uiid = `#${id}`;
+
+  console.log(activeTrap);
+
   return (
-    <Nav navOpen={navOpen}>
+    <StyledDrawer open={drawerOpen} overrides={useOverrideContext()}>
       {activeTrap && (
         <FocusTrap
           focusTrapOptions={{
-            fallbackFocus: '#mobile-nav-trap',
+            fallbackFocus: uiid,
             allowOutsideClick: true,
             onDeactivate: unmountTrap
           }}
         >
-          <div id="mobile-nav-trap" tabIndex="-1">
-            {/* modal close */}
-
-            <FlexContainer items="flex-end" justify="flex-end">
-              <StyledCloseButton ref={closeButtonRef} onClick={handleClick}>
-                close drawer
-              </StyledCloseButton>
-            </FlexContainer>
+          <div id={uiid} tabIndex="-1">
+            <button type="button" ref={closeButtonRef} onClick={handleClick}>
+              close drawer
+            </button>
           </div>
         </FocusTrap>
       )}
-    </Nav>
+    </StyledDrawer>
   );
 };

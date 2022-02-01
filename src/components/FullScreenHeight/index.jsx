@@ -1,6 +1,7 @@
 import React from 'react';
 import { use100vh } from 'react-div-100vh';
 import { useMediaQuery } from 'react-responsive';
+import { useOverrideContext } from '../../context/OverrideContext';
 import { checkForOverride } from '../../utils';
 import { FlexContainer } from '../FlexContainer';
 
@@ -10,12 +11,11 @@ const FullScreenHeight = ({
   justify,
   items,
   direction,
-  offset,
-  overrides
+  offset
 }) => {
   const height = use100vh();
 
-  const BREAKPOINT = checkForOverride('breakpoints', overrides);
+  const BREAKPOINT = checkForOverride('breakpoints', useOverrideContext());
 
   let breakpoint;
 

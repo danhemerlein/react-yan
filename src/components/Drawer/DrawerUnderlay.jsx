@@ -12,18 +12,18 @@ const Underlay = styled.div`
   z-index: 4;
   cursor: pointer;
 
-  ${({ modalOpen }) => {
-    return modalOpen && `display: block;`;
+  ${({ open }) => {
+    return open && `display: block;`;
   }};
 `;
 
-const DrawerUnderlay = ({ modalOpen, clickHandler, unmountTrap }) => {
+const DrawerUnderlay = ({ drawerOpen, clickHandler, unmountTrap }) => {
   const handleClick = () => {
     clickHandler();
     unmountTrap();
   };
 
-  return <Underlay modalOpen={modalOpen} onClick={handleClick} />;
+  return <Underlay open={drawerOpen} onClick={handleClick} />;
 };
 
 export default DrawerUnderlay;
