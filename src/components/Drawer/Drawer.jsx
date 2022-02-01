@@ -1,5 +1,5 @@
 import FocusTrap from 'focus-trap-react';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import whatInput from 'what-input';
 import { useOverrideContext } from '../../context/OverrideContext';

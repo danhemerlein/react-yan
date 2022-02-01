@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { useOverrideContext } from '../../context/OverrideContext';
 import { getTextAlign, typeHelper } from './helpers';
