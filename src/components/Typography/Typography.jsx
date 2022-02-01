@@ -1,67 +1,186 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useOverrideContext } from '../../context/OverrideContext';
-import { getTextAlign, typeHelper } from './helpers';
+import { typeHelper } from './helpers';
 
 const HeadlineOne = styled.h1`
-  ${(props) => {
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+        text-align: ${textAlign};
+      `
+    );
+  }};
+
+  ${({ color }) => {
+    return (
+      color &&
+      `
+        color: ${color};
+      `
+    );
+  }};
+
+  ${({ overrides }) => {
     return `
-      ${getTextAlign(props.textAlign)}
-      ${typeHelper(props.overrides, 'headlineOneFontSize')}
+      ${typeHelper(overrides, 'headlineOneFontSize')}
     `;
   }}
 `;
 
 const HeadlineTwo = styled.h2`
-  ${(props) => {
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+        text-align: ${textAlign};
+      `
+    );
+  }};
+
+  ${({ color }) => {
+    return (
+      color &&
+      `
+        color: ${color};
+      `
+    );
+  }};
+
+  ${({ overrides }) => {
     return `
-      ${getTextAlign(props.textAlign)}
-      ${typeHelper(props.overrides, 'headlineTwoFontSize')}
+      ${typeHelper(overrides, 'headlineTwoFontSize')}
     `;
   }}
 `;
 
 const HeadlineThree = styled.h3`
-  ${(props) => {
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+        text-align: ${textAlign};
+      `
+    );
+  }};
+
+  ${({ color }) => {
+    return (
+      color &&
+      `
+        color: ${color};
+      `
+    );
+  }};
+
+  ${({ overrides }) => {
     return `
-      ${getTextAlign(props.textAlign)}
-      ${typeHelper(props.overrides, 'headlineThreeFontSize')}
+      ${typeHelper(overrides, 'headlineThreeFontSize')}
     `;
   }}
 `;
 
 const HeadlineFour = styled.h4`
-  ${(props) => {
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+        text-align: ${textAlign};
+      `
+    );
+  }};
+
+  ${({ color }) => {
+    return (
+      color &&
+      `
+        color: ${color};
+      `
+    );
+  }};
+
+  ${({ overrides }) => {
     return `
-      ${getTextAlign(props.textAlign)}
-      ${typeHelper(props.overrides, 'headlineFourFontSize')}
+      ${typeHelper(overrides, 'headlineFourFontSize')}
     `;
   }}
 `;
 
 const HeadlineFive = styled.h5`
-  ${(props) => {
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+        text-align: ${textAlign};
+      `
+    );
+  }};
+
+  ${({ color }) => {
+    return (
+      color &&
+      `
+        color: ${color};
+      `
+    );
+  }};
+
+  ${({ overrides }) => {
     return `
-      ${getTextAlign(props.textAlign)}
-      ${typeHelper(props.overrides, 'headlineFiveFontSize')}
+      ${typeHelper(overrides, 'headlineFiveFontSize')}
     `;
   }}
 `;
 
 const HeadlineSix = styled.h6`
-  ${(props) => {
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+        text-align: ${textAlign};
+      `
+    );
+  }};
+
+  ${({ color }) => {
+    return (
+      color &&
+      `
+        color: ${color};
+      `
+    );
+  }};
+
+  ${({ overrides }) => {
     return `
-      ${getTextAlign(props.textAlign)}
-      ${typeHelper(props.overrides, 'headlineSixFontSize')}
+      ${typeHelper(overrides, 'headlineSixFontSize')}
     `;
   }}
 `;
 
 export const Paragraph = styled.p`
-  ${(props) => {
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+        text-align: ${textAlign};
+      `
+    );
+  }};
+
+  ${({ color }) => {
+    return (
+      color &&
+      `
+        color: ${color};
+      `
+    );
+  }};
+
+  ${({ overrides }) => {
     return `
-      ${getTextAlign(props.textAlign)}
-      ${typeHelper(props.overrides, 'paragraphFontSize')}
+      ${typeHelper(overrides, 'paragraphFontSize')}
     `;
   }}
 
@@ -70,57 +189,89 @@ export const Paragraph = styled.p`
   }};
 `;
 
-export const H1 = ({ textAlign, children }) => {
+export const H1 = ({ textAlign, children, className, color }) => {
   return (
-    <HeadlineOne textAlign={textAlign} overrides={useOverrideContext()}>
+    <HeadlineOne
+      className={className}
+      color={color}
+      textAlign={textAlign}
+      overrides={useOverrideContext()}
+    >
       {children}
     </HeadlineOne>
   );
 };
 
-export const H2 = ({ textAlign, children }) => {
+export const H2 = ({ textAlign, children, className, color }) => {
   return (
-    <HeadlineTwo textAlign={textAlign} overrides={useOverrideContext()}>
+    <HeadlineTwo
+      className={className}
+      textAlign={textAlign}
+      color={color}
+      overrides={useOverrideContext()}
+    >
       {children}
     </HeadlineTwo>
   );
 };
 
-export const H3 = ({ textAlign, children }) => {
+export const H3 = ({ textAlign, children, className, color }) => {
   return (
-    <HeadlineThree textAlign={textAlign} overrides={useOverrideContext()}>
+    <HeadlineThree
+      className={className}
+      textAlign={textAlign}
+      color={color}
+      overrides={useOverrideContext()}
+    >
       {children}
     </HeadlineThree>
   );
 };
 
-export const H4 = ({ textAlign, children }) => {
+export const H4 = ({ textAlign, children, className, color }) => {
   return (
-    <HeadlineFour textAlign={textAlign} overrides={useOverrideContext()}>
+    <HeadlineFour
+      className={className}
+      textAlign={textAlign}
+      color={color}
+      overrides={useOverrideContext()}
+    >
       {children}
     </HeadlineFour>
   );
 };
 
-export const H5 = ({ textAlign, children }) => {
+export const H5 = ({ textAlign, children, className, color }) => {
   return (
-    <HeadlineFive textAlign={textAlign} overrides={useOverrideContext()}>
+    <HeadlineFive
+      color={color}
+      className={className}
+      textAlign={textAlign}
+      overrides={useOverrideContext()}
+    >
       {children}
     </HeadlineFive>
   );
 };
 
-export const H6 = ({ textAlign, children }) => {
+export const H6 = ({ textAlign, children, className, color }) => {
   return (
-    <HeadlineSix textAlign={textAlign} overrides={useOverrideContext()}>
+    <HeadlineSix
+      color={color}
+      className={className}
+      textAlign={textAlign}
+      overrides={useOverrideContext()}
+    >
       {children}
     </HeadlineSix>
   );
 };
 
-export const P = ({ textAlign, lowercase, children }) => {
+export const P = ({ textAlign, lowercase, children, className, color }) => {
   return (
     <Paragraph
+      color={color}
+      className={className}
       textAlign={textAlign}
       lowercase={lowercase}
       overrides={useOverrideContext()}

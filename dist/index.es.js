@@ -1,14 +1,14 @@
-import e from"focus-trap-react";import t,{useContext as n,createContext as i,useRef as r,useEffect as o}from"react";import l from"styled-components";import a from"what-input";import{use100vh as s}from"react-div-100vh";import{useMediaQuery as d}from"react-responsive";const c=i({}),m=()=>n(c),p=({children:e,overrides:n})=>t.createElement(c.Provider,{value:n},e),h={fontFamily:"sans-serif",headlineOneFontSize:"3.2rem",headlineTwoFontSize:"2.6rem",headlineThreeFontSize:"2.4rem",headlineFourFontSize:"2rem",headlineFiveFontSize:"1.6rem",headlineSixFontSize:"1.6rem",paragraphFontSize:"1.6rem",drawerTransition:"transform 450ms cubic-bezier(0.23, 1, 0.32, 1)",drawerZIndex:"5",breakpoints:{mobile:320,tablet:720,desktop:1024,"desktop-max":1440}},$=(e,t)=>t.hasOwnProperty(e)?t[e]:h[e],f=l.div`
+import e from"focus-trap-react";import n,{useContext as t,createContext as r,useRef as o,useEffect as i}from"react";import l from"styled-components";import a from"what-input";import{use100vh as s}from"react-div-100vh";import{useMediaQuery as c}from"react-responsive";const d=r({}),m=()=>t(d),$=({children:e,overrides:t})=>n.createElement(d.Provider,{value:t},e),p={fontFamily:"sans-serif",headlineOneFontSize:"3.2rem",headlineTwoFontSize:"2.6rem",headlineThreeFontSize:"2.4rem",headlineFourFontSize:"2rem",headlineFiveFontSize:"1.6rem",headlineSixFontSize:"1.6rem",paragraphFontSize:"1.6rem",drawerTransition:"transform 450ms cubic-bezier(0.23, 1, 0.32, 1)",drawerZIndex:"5",breakpoints:{mobile:320,tablet:720,desktop:1024,"desktop-max":1440}},h=(e,n)=>n.hasOwnProperty(e)?n[e]:p[e],x=l.div`
   position: absolute;
   display: block;
   visibility: hidden;
 
   ${({position:e})=>"left"===e?"left: 0;":"right: 0;"};
 
-  ${({overrides:e,top:t,transform:n})=>`\n      top: ${t};\n      transform: translateX(${n});\n      z-index: ${$("drawerZIndex",e)};\n      transition: ${$("drawerTransition",e)};\n    `}
+  ${({overrides:e,top:n,transform:t})=>`\n      top: ${n};\n      transform: translateX(${t});\n      z-index: ${h("drawerZIndex",e)};\n      transition: ${h("drawerTransition",e)};\n    `}
 
   ${({open:e})=>e&&"\n        visibility: visible;\n        transform: translateX(0);\n        position: fixed;\n      "};
-`,x=({clickHandler:n,drawerOpen:i,activeTrap:l,unmountTrap:s,Interior:d,config:c})=>{const p=r(),{id:h,top:$,position:x,transform:g}=c;o((()=>{"keyboard"===a.ask()&&i&&p.current.focus()}),[i]);const v=`#${h}`;return t.createElement(f,{open:i,overrides:m(),transform:g,position:x,top:$},l&&t.createElement(e,{focusTrapOptions:{fallbackFocus:v,allowOutsideClick:!0,onDeactivate:s}},t.createElement(d,{closeButtonRef:p,handleClick:()=>{n(),s()}})))},g=({Trigger:e,mountTrap:n,clickHandler:i})=>t.createElement(e,{handleClick:()=>{i(),n()}}),v=l.div`
+`,g=({clickHandler:t,drawerOpen:r,activeTrap:l,unmountTrap:s,Interior:c,config:d})=>{const $=o(),{id:p,top:h,position:g,transform:f}=d;i((()=>{"keyboard"===a.ask()&&r&&$.current.focus()}),[r]);const v=`#${p}`;return n.createElement(x,{open:r,overrides:m(),transform:f,position:g,top:h},l&&n.createElement(e,{focusTrapOptions:{fallbackFocus:v,allowOutsideClick:!0,onDeactivate:s}},n.createElement(c,{closeButtonRef:$,handleClick:()=>{t(),s()}})))},f=({Trigger:e,mountTrap:t,clickHandler:r})=>n.createElement(e,{handleClick:()=>{r(),t()}}),v=l.div`
   display: none;
   position: fixed;
   top: 0;
@@ -20,7 +20,7 @@ import e from"focus-trap-react";import t,{useContext as n,createContext as i,use
   cursor: pointer;
 
   ${({open:e})=>e&&"display: block;"};
-`,u=({drawerOpen:e,clickHandler:n,unmountTrap:i})=>t.createElement(v,{open:e,onClick:()=>{n(),i()}}),A=l.div`
+`,u=({drawerOpen:e,clickHandler:t,unmountTrap:r})=>n.createElement(v,{open:e,onClick:()=>{t(),r()}}),A=l.div`
   display: flex;
 
   ${({justify:e})=>e&&`justify-content: ${e}`};
@@ -34,20 +34,48 @@ import e from"focus-trap-react";import t,{useContext as n,createContext as i,use
   ${({height:e})=>e&&`height: ${e}`};
 
   ${({width:e})=>e&&`width: ${e}`};
-`,F=({children:e,unsetBreakpoint:n,justify:i,items:r,direction:o,offset:l})=>{const a=s(),c=$("breakpoints",m());let p;const h=d({query:`(min-width: ${c[n]})`});p="none"!==n?h:"none";return t.createElement(A,{justify:i,items:r,direction:o,height:((e,t,n)=>"none"===e||e?t-n+"px":"auto")(p,a,l)},e)},w=e=>e&&`text-align: ${e};`,k=(e,t)=>e&&`\n      font-family: ${$("fontFamily",e)};\n      font-size: ${$(t,e)};\n    `,z=l.h1`
-  ${e=>`\n      ${w(e.textAlign)}\n      ${k(e.overrides,"headlineOneFontSize")}\n    `}
-`,b=l.h2`
-  ${e=>`\n      ${w(e.textAlign)}\n      ${k(e.overrides,"headlineTwoFontSize")}\n    `}
-`,y=l.h3`
-  ${e=>`\n      ${w(e.textAlign)}\n      ${k(e.overrides,"headlineThreeFontSize")}\n    `}
-`,S=l.h4`
-  ${e=>`\n      ${w(e.textAlign)}\n      ${k(e.overrides,"headlineFourFontSize")}\n    `}
-`,E=l.h5`
-  ${e=>`\n      ${w(e.textAlign)}\n      ${k(e.overrides,"headlineFiveFontSize")}\n    `}
-`,T=l.h6`
-  ${e=>`\n      ${w(e.textAlign)}\n      ${k(e.overrides,"headlineSixFontSize")}\n    `}
-`,O=l.p`
-  ${e=>`\n      ${w(e.textAlign)}\n      ${k(e.overrides,"paragraphFontSize")}\n    `}
+`,F=({children:e,unsetBreakpoint:t,justify:r,items:o,direction:i,offset:l})=>{const a=s(),d=h("breakpoints",m());let $;const p=c({query:`(min-width: ${d[t]})`});$="none"!==t?p:"none";return n.createElement(A,{justify:r,items:o,direction:i,height:((e,n,t)=>"none"===e||e?n-t+"px":"auto")($,a,l)},e)},w=(e,n)=>e&&`\n      font-family: ${h("fontFamily",e)};\n      font-size: ${h(n,e)};\n    `,k=l.h1`
+  ${({textAlign:e})=>e&&`\n        text-align: ${e};\n      `};
+
+  ${({color:e})=>e&&`\n        color: ${e};\n      `};
+
+  ${({overrides:e})=>`\n      ${w(e,"headlineOneFontSize")}\n    `}
+`,z=l.h2`
+  ${({textAlign:e})=>e&&`\n        text-align: ${e};\n      `};
+
+  ${({color:e})=>e&&`\n        color: ${e};\n      `};
+
+  ${({overrides:e})=>`\n      ${w(e,"headlineTwoFontSize")}\n    `}
+`,b=l.h3`
+  ${({textAlign:e})=>e&&`\n        text-align: ${e};\n      `};
+
+  ${({color:e})=>e&&`\n        color: ${e};\n      `};
+
+  ${({overrides:e})=>`\n      ${w(e,"headlineThreeFontSize")}\n    `}
+`,y=l.h4`
+  ${({textAlign:e})=>e&&`\n        text-align: ${e};\n      `};
+
+  ${({color:e})=>e&&`\n        color: ${e};\n      `};
+
+  ${({overrides:e})=>`\n      ${w(e,"headlineFourFontSize")}\n    `}
+`,S=l.h5`
+  ${({textAlign:e})=>e&&`\n        text-align: ${e};\n      `};
+
+  ${({color:e})=>e&&`\n        color: ${e};\n      `};
+
+  ${({overrides:e})=>`\n      ${w(e,"headlineFiveFontSize")}\n    `}
+`,E=l.h6`
+  ${({textAlign:e})=>e&&`\n        text-align: ${e};\n      `};
+
+  ${({color:e})=>e&&`\n        color: ${e};\n      `};
+
+  ${({overrides:e})=>`\n      ${w(e,"headlineSixFontSize")}\n    `}
+`,N=l.p`
+  ${({textAlign:e})=>e&&`\n        text-align: ${e};\n      `};
+
+  ${({color:e})=>e&&`\n        color: ${e};\n      `};
+
+  ${({overrides:e})=>`\n      ${w(e,"paragraphFontSize")}\n    `}
 
   ${({lowercase:e})=>e&&"text-transform: lowercase"};
-`,j=({textAlign:e,children:n})=>t.createElement(z,{textAlign:e,overrides:m()},n),C=({textAlign:e,children:n})=>t.createElement(b,{textAlign:e,overrides:m()},n),H=({textAlign:e,children:n})=>t.createElement(y,{textAlign:e,overrides:m()},n),I=({textAlign:e,children:n})=>t.createElement(S,{textAlign:e,overrides:m()},n),B=({textAlign:e,children:n})=>t.createElement(E,{textAlign:e,overrides:m()},n),P=({textAlign:e,children:n})=>t.createElement(T,{textAlign:e,overrides:m()},n),X=({textAlign:e,lowercase:n,children:i})=>t.createElement(O,{textAlign:e,lowercase:n,overrides:m()},i);export{x as Drawer,g as DrawerTrigger,u as DrawerUnderlay,A as FlexContainer,F as FullScreenHeight,j as H1,C as H2,H as H3,I as H4,B as H5,P as H6,X as P,O as Paragraph,p as ReactYanOverrideProvider,m as useOverrideContext};
+`,T=({textAlign:e,children:t,className:r,color:o})=>n.createElement(k,{className:r,color:o,textAlign:e,overrides:m()},t),O=({textAlign:e,children:t,className:r,color:o})=>n.createElement(z,{className:r,textAlign:e,color:o,overrides:m()},t),j=({textAlign:e,children:t,className:r,color:o})=>n.createElement(b,{className:r,textAlign:e,color:o,overrides:m()},t),C=({textAlign:e,children:t,className:r,color:o})=>n.createElement(y,{className:r,textAlign:e,color:o,overrides:m()},t),H=({textAlign:e,children:t,className:r,color:o})=>n.createElement(S,{color:o,className:r,textAlign:e,overrides:m()},t),I=({textAlign:e,children:t,className:r,color:o})=>n.createElement(E,{color:o,className:r,textAlign:e,overrides:m()},t),B=({textAlign:e,lowercase:t,children:r,className:o,color:i})=>n.createElement(N,{color:i,className:o,textAlign:e,lowercase:t,overrides:m()},r);export{g as Drawer,f as DrawerTrigger,u as DrawerUnderlay,A as FlexContainer,F as FullScreenHeight,T as H1,O as H2,j as H3,C as H4,H as H5,I as H6,B as P,N as Paragraph,$ as ReactYanOverrideProvider,m as useOverrideContext};
