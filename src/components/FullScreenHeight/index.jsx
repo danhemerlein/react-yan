@@ -4,17 +4,18 @@ import { useMediaQuery } from 'react-responsive';
 import { checkForOverride } from '../../utils';
 import { FlexContainer } from '../FlexContainer';
 
-const BREAKPOINT = checkForOverride('breakpoints');
-
 const FullScreenHeight = ({
   children,
   unsetBreakpoint,
   justify,
   items,
   direction,
-  offset
+  offset,
+  overrides
 }) => {
   const height = use100vh();
+
+  const BREAKPOINT = checkForOverride('breakpoints', overrides);
 
   let breakpoint;
 
