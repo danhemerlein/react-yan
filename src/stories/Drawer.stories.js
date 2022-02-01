@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Drawer } from '../components/Drawer/Drawer';
-import DrawerTrigger from '../components/Drawer/DrawerTrigger';
-import DrawerUnderlay from '../components/Drawer/DrawerUnderlay';
+import { DrawerTrigger } from '../components/Drawer/DrawerTrigger';
+import { DrawerUnderlay } from '../components/Drawer/DrawerUnderlay';
 
 export default {
   title: 'Drawer',
@@ -10,6 +10,13 @@ export default {
 };
 
 const Interior = ({ closeButtonRef, handleClick }) => {
+  const StyledInterior = styled.div`
+    height: 100px;
+    width: 100px;
+    background: white;
+    border: 5px solid black;
+  `;
+
   return (
     <StyledInterior>
       <button type="button" ref={closeButtonRef} onClick={handleClick}>
@@ -19,23 +26,32 @@ const Interior = ({ closeButtonRef, handleClick }) => {
   );
 };
 
-const StyledInterior = styled.div`
-  height: 100px;
-  width: 100px;
-  background: white;
-  border: 5px solid black;
-`;
+const Trigger = ({ handleClick }) => {
+  const Button = styled.button`
+    cursor: pointer;
+    border: transparent;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  `;
+
+  return (
+    <Button type="button" onClick={handleClick}>
+      <span>new trigger</span>
+    </Button>
+  );
+};
 
 export const DrawerStory = () => {
   const [open, setOpen] = useState(false);
   const [activeTrap, setActiveTrap] = useState(false);
 
-  const ID = 'drawer';
-  const TOP = 0;
-  const POSITION = 'left';
-  const HEIGHT = '100px';
-  const WIDTH = '100px';
-  const TRANSFORM = '-116px';
+  const drawerConfig = {
+    id: 'drawer',
+    top: 0,
+    position: 'left',
+    transform: '-116px'
+  };
 
   const mountTrap = () => {
     setActiveTrap(true);
@@ -54,17 +70,11 @@ export const DrawerStory = () => {
       <Drawer
         activeTrap={activeTrap}
         drawerOpen={open}
-        id={ID}
         unmountTrap={unmountTrap}
         clickHandler={() => {
           return toggleDrawer();
         }}
-        Inerior={Interior}
-        top={TOP}
-        position={POSITION}
-        height={HEIGHT}
-        width={WIDTH}
-        transform={TRANSFORM}
+        config={drawerConfig}
         Interior={Interior}
       />
 
@@ -73,7 +83,7 @@ export const DrawerStory = () => {
           return toggleDrawer();
         }}
         mountTrap={mountTrap}
-        activeTrap={activeTrap}
+        Trigger={Trigger}
       />
 
       <DrawerUnderlay

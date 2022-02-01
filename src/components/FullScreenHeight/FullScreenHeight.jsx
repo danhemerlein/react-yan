@@ -5,7 +5,7 @@ import { useOverrideContext } from '../../context/OverrideContext';
 import { checkForOverride } from '../../utils';
 import { FlexContainer } from '../FlexContainer';
 
-const FullScreenHeight = ({
+export const FullScreenHeight = ({
   children,
   unsetBreakpoint,
   justify,
@@ -47,5 +47,3 @@ const FullScreenHeight = ({
     </FlexContainer>
   );
 };
-
-export default FullScreenHeight;

@@ -17,7 +17,7 @@ const Underlay = styled.div`
   }};
 `;
 
-const DrawerUnderlay = ({ drawerOpen, clickHandler, unmountTrap }) => {
+export const DrawerUnderlay = ({ drawerOpen, clickHandler, unmountTrap }) => {
   const handleClick = () => {
     clickHandler();
     unmountTrap();
@@ -25,5 +25,3 @@ const DrawerUnderlay = ({ drawerOpen, clickHandler, unmountTrap }) => {
 
   return <Underlay open={drawerOpen} onClick={handleClick} />;
 };
-
-export default DrawerUnderlay;

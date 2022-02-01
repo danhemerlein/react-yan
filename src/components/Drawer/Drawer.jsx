@@ -18,12 +18,10 @@ const StyledDrawer = styled.div`
     return `right: 0;`;
   }};
 
-  ${({ overrides, height, width, top, transform }) => {
+  ${({ overrides, top, transform }) => {
     return `
-  top: ${top};
-  height: ${height};
-  width: ${width};
-  transform: translateX(${transform});
+      top: ${top};
+      transform: translateX(${transform});
       z-index: ${checkForOverride('drawerZIndex', overrides)};
       transition: ${checkForOverride('drawerTransition', overrides)};
     `;
@@ -47,14 +45,11 @@ export const Drawer = ({
   activeTrap,
   unmountTrap,
   Interior,
-  id,
-  height,
-  width,
-  top,
-  position,
-  transform
+  config
 }) => {
   const closeButtonRef = useRef();
+
+  const { id, top, position, transform } = config;
 
   useEffect(() => {
     if (whatInput.ask() === 'keyboard' && drawerOpen) {
@@ -73,8 +68,6 @@ export const Drawer = ({
     <StyledDrawer
       open={drawerOpen}
       overrides={useOverrideContext()}
-      height={height}
-      width={width}
       transform={transform}
       position={position}
       top={top}

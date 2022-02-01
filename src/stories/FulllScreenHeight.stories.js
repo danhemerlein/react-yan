@@ -1,4 +1,4 @@
-import FullScreenHeight from '../components/FullScreenHeight';
+import { FullScreenHeight } from '../components/FullScreenHeight';
 import { P } from '../components/Typography';
 
 export default {
