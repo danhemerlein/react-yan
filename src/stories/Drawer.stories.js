@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 import { Drawer } from '../components/Drawer/Drawer';
 import DrawerTrigger from '../components/Drawer/DrawerTrigger';
 import DrawerUnderlay from '../components/Drawer/DrawerUnderlay';
@@ -8,9 +9,33 @@ export default {
   component: DrawerStory
 };
 
+const Interior = ({ closeButtonRef, handleClick }) => {
+  return (
+    <StyledInterior>
+      <button type="button" ref={closeButtonRef} onClick={handleClick}>
+        close drawer
+      </button>
+    </StyledInterior>
+  );
+};
+
+const StyledInterior = styled.div`
+  height: 100px;
+  width: 100px;
+  background: white;
+  border: 5px solid black;
+`;
+
 export const DrawerStory = () => {
   const [open, setOpen] = useState(false);
   const [activeTrap, setActiveTrap] = useState(false);
+
+  const ID = 'drawer';
+  const TOP = 0;
+  const POSITION = 'left';
+  const HEIGHT = '100px';
+  const WIDTH = '100px';
+  const TRANSFORM = '-116px';
 
   const mountTrap = () => {
     setActiveTrap(true);
@@ -29,11 +54,18 @@ export const DrawerStory = () => {
       <Drawer
         activeTrap={activeTrap}
         drawerOpen={open}
-        id="drawer"
+        id={ID}
         unmountTrap={unmountTrap}
         clickHandler={() => {
           return toggleDrawer();
         }}
+        Inerior={Interior}
+        top={TOP}
+        position={POSITION}
+        height={HEIGHT}
+        width={WIDTH}
+        transform={TRANSFORM}
+        Interior={Interior}
       />
 
       <DrawerTrigger
@@ -43,6 +75,7 @@ export const DrawerStory = () => {
         mountTrap={mountTrap}
         activeTrap={activeTrap}
       />
+
       <DrawerUnderlay
         drawerOpen={open}
         clickHandler={() => {

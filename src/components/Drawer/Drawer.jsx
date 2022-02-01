@@ -6,32 +6,26 @@ import { useOverrideContext } from '../../context/OverrideContext';
 import { checkForOverride } from '../../utils';
 
 const StyledDrawer = styled.div`
-  transform: translateX(-226px);
-  width: 210px;
-
   position: absolute;
-  left: 0;
-  top: 0;
-
-  height: 100px;
   display: block;
-  overflow-y: scroll;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 1.6rem;
-
-  background: white;
-
-  border-right: 1px solid;
-
   visibility: hidden;
 
-  ${(props) => {
+  ${({ position }) => {
+    if (position === 'left') {
+      return `left: 0;`;
+    }
+
+    return `right: 0;`;
+  }};
+
+  ${({ overrides, height, width, top, transform }) => {
     return `
-      z-index: ${checkForOverride('drawerZIndex', props.overrides)};
-      transition: ${checkForOverride('drawerTransition', props.overrides)};
+  top: ${top};
+  height: ${height};
+  width: ${width};
+  transform: translateX(${transform});
+      z-index: ${checkForOverride('drawerZIndex', overrides)};
+      transition: ${checkForOverride('drawerTransition', overrides)};
     `;
   }}
 
@@ -52,7 +46,13 @@ export const Drawer = ({
   drawerOpen,
   activeTrap,
   unmountTrap,
-  id
+  Interior,
+  id,
+  height,
+  width,
+  top,
+  position,
+  transform
 }) => {
   const closeButtonRef = useRef();
 
@@ -69,10 +69,16 @@ export const Drawer = ({
 
   const uiid = `#${id}`;
 
-  console.log(activeTrap);
-
   return (
-    <StyledDrawer open={drawerOpen} overrides={useOverrideContext()}>
+    <StyledDrawer
+      open={drawerOpen}
+      overrides={useOverrideContext()}
+      height={height}
+      width={width}
+      transform={transform}
+      position={position}
+      top={top}
+    >
       {activeTrap && (
         <FocusTrap
           focusTrapOptions={{
@@ -81,11 +87,7 @@ export const Drawer = ({
             onDeactivate: unmountTrap
           }}
         >
-          <div id={uiid} tabIndex="-1">
-            <button type="button" ref={closeButtonRef} onClick={handleClick}>
-              close drawer
-            </button>
-          </div>
+          <Interior closeButtonRef={closeButtonRef} handleClick={handleClick} />
         </FocusTrap>
       )}
     </StyledDrawer>
