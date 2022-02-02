@@ -7,8 +7,9 @@ Drawer
 DrawerTrigger
 DrawerUnderlay
 
-# helpers
-
 # exported utilities
+fullBleed
+anchorColor
+above
 
 # configerable parameters
