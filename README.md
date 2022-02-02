@@ -1,4 +1,4 @@
-exported components
+# components
 
 H1, H2, H3, H4, H5, H6, P
 FlexContainer
@@ -7,7 +7,8 @@ Drawer
 DrawerTrigger
 DrawerUnderlay
 
-exported helpers
+# helpers
 
+# exported utilities
 
-configerable parameters
+# configerable parameters

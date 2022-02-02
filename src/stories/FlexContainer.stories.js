@@ -3,7 +3,7 @@ import { FlexContainer } from '../components/FlexContainer';
 import { P } from '../components/Typography';
 
 export default {
-  title: 'FlexContainer',
+  title: 'Flex Container',
   component: FlexContainerStory
 };
 
