@@ -1,5 +1,10 @@
+import styled from 'styled-components';
 import { FullScreenHeight } from '../components/FullScreenHeight';
 import { P } from '../components/Typography';
+
+const SFullScreenHeight = styled(FullScreenHeight)`
+  border: 5px solid black;
+`;
 
 export default {
   title: 'Fulll Screen Height',
@@ -9,21 +14,22 @@ export default {
       control: { type: 'radio' }
     },
     offset: {
-      type: 'number'
+      type: 'number',
+      defaultValue: 0
     }
   }
 };
 
 const Template = ({ unsetBreakpoint, offset }) => {
   return (
-    <FullScreenHeight
+    <SFullScreenHeight
       unsetBreakpoint={unsetBreakpoint}
       offset={offset}
       direction="column"
     >
       <P>content</P>
       <P>content</P>
-    </FullScreenHeight>
+    </SFullScreenHeight>
   );
 };
 

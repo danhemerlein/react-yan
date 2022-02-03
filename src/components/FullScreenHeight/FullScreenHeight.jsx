@@ -11,11 +11,16 @@ export const FullScreenHeight = ({
   justify,
   items,
   direction,
-  offset
+  offset,
+  className
 }) => {
   const height = use100vh();
 
   const BREAKPOINT = checkForOverride('breakpoints', useOverrideContext());
+
+  console.log(useOverrideContext());
+
+  console.log(BREAKPOINT);
 
   let breakpoint;
 
@@ -39,8 +44,10 @@ export const FullScreenHeight = ({
   return (
     <FlexContainer
       justify={justify}
+      offset={0}
       items={items}
       direction={direction}
+      className={className}
       height={generateHeight(breakpoint, height, offset)}
     >
       {children}
