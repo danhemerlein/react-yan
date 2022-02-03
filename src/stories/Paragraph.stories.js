@@ -1,3 +1,4 @@
+import { P } from '../components/Typography';
 
 export default {
   title: 'Paragraph',
@@ -10,8 +11,7 @@ export default {
 };
 
 const Template = ({ textAlign }) => {
-  // return <P textAlign={textAlign}>test</P>;
-  return <p>test</p>;
+  return <P textAlign={textAlign}>test</P>;
 };
 
 export const ParagraphStory = Template.bind({});

@@ -3,13 +3,12 @@ import React, { createContext, useContext } from 'react';
 const OverrideContext = createContext({});
 
 export const useOverrideContext = () => {
-  const context = useContext(OverrideContext);
-  return context;
+  return useContext(OverrideContext);
 };
 
-export const ReactYanOverrideProvider = ({ children, overrides }) => {
+export const ReactYanOverrideProvider = ({ children, value }) => {
   return (
-    <OverrideContext.Provider value={overrides}>
+    <OverrideContext.Provider value={value}>
       {children}
     </OverrideContext.Provider>
   );

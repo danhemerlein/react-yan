@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-// import { A } from '../components/Typography';
-// import { anchorColor } from '../utilities';
+import { A } from '../components/Typography';
+import { anchorColor } from '../utilities';
 
 export default {
   title: 'Anchor Color Mixin',
@@ -14,13 +14,13 @@ const StyledA = styled.a`
 export const AnchorColorStory = () => {
   return (
     <div>
-      {/* <StyledA href="https://www.danhemerlein.com" target="_blank">
+      <StyledA href="https://www.danhemerlein.com" target="_blank">
         danhemerlein.com
       </StyledA>
 
       <A href="https://www.danhemerlein.com" target="_blank">
         danhemerlein.com
-      </A> */}
+      </A>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import useOverrideContext from '../../context/OverrideContext';
-// import { anchorColor } from '../../utilities';
+import { useOverrideContext } from '../../context/OverrideContext';
+import { anchorColor } from '../../utilities';
 import { typeHelper } from './helpers';
 
 const HeadlineOne = styled.h1`
@@ -122,34 +122,34 @@ const S = styled.span`
 
 // const Anchor = styled.a``;
 
-// const Anchor = styled.a`
-//   ${({ textAlign }) => {
-//     return (
-//       textAlign &&
-//       `
-//       text-align: ${textAlign};
-//     `
-//     );
-//   }};
+const Anchor = styled.a`
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+      text-align: ${textAlign};
+    `
+    );
+  }};
 
-//   ${anchorColor({
-//     color: ({ color }) => {
-//       return color;
-//     },
-//     textDecoration: ({ textDecoration }) => {
-//       return textDecoration;
-//     },
-//     textDecorationHover: ({ textDecorationHover }) => {
-//       return textDecorationHover;
-//     }
-//   })};
+  ${anchorColor({
+    color: ({ color }) => {
+      return color;
+    },
+    textDecoration: ({ textDecoration }) => {
+      return textDecoration;
+    },
+    textDecorationHover: ({ textDecorationHover }) => {
+      return textDecorationHover;
+    }
+  })};
 
-//   ${({ overrides }) => {
-//     return `
-//       ${typeHelper(overrides, 'anchorFontFize')}
-//     `;
-//   }}
-// `;
+  ${({ overrides }) => {
+    return `
+      ${typeHelper(overrides, 'anchorFontFize')}
+    `;
+  }}
+`;
 
 export const H1 = ({ textAlign, children, className, color }) => {
   return (
@@ -256,24 +256,24 @@ export const Span = ({ textAlign, children, className, color }) => {
   );
 };
 
-// export const A = ({
-//   textAlign,
-//   children,
-//   className,
-//   color,
-//   textDecoration,
-//   textDecorationHover
-// }) => {
-//   return (
-//     <Anchor
-//       textDecoration={textDecoration}
-//       textDecorationHover={textDecorationHover}
-//       color={color}
-//       className={className}
-//       textAlign={textAlign}
-//       overrides={useOverrideContext()}
-//     >
-//       {children}
-//     </Anchor>
-//   );
-// };
+export const A = ({
+  textAlign,
+  children,
+  className,
+  color,
+  textDecoration,
+  textDecorationHover
+}) => {
+  return (
+    <Anchor
+      textDecoration={textDecoration}
+      textDecorationHover={textDecorationHover}
+      color={color}
+      className={className}
+      textAlign={textAlign}
+      overrides={useOverrideContext()}
+    >
+      {children}
+    </Anchor>
+  );
+};

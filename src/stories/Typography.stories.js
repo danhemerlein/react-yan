@@ -1,5 +1,4 @@
-// import { A, H1, H2, H3, H4, H5, H6, P, Span } from '../components/Typography';
-import { H1, H2, H3, H4, H5, H6, P, Span } from '../components/Typography';
+import { A, H1, H2, H3, H4, H5, H6, P, Span } from '../components/Typography';
 
 export default {
   title: 'Typography',
@@ -9,14 +8,17 @@ export default {
 export const TypographyStory = () => {
   return (
     <>
-      <H1 textAlign="center">Headline One</H1>
+      <H1>Headline One</H1>
       <H2>Headline Two</H2>
       <H3>Headline Three</H3>
       <H4>Headline Four</H4>
       <H5>Headline Five</H5>
       <H6>Headline Six</H6>
       <P>Paragraph</P>
-      <Span>Paragraph</Span>
+      <Span>Span</Span>
+      <A href="https://www.danhemerlein.com" target="_blank">
+        danhemerlein.com
+      </A>
     </>
   );
 };

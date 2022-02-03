@@ -11,12 +11,16 @@ export const parameters = {
   },
 }
 
-// Global decorator to apply the styles to all stories
+const reactYanOverrides = {
+  fontFamily: 'serif',
+  headlineOneFontSize: '60px'
+}
+
 export const decorators = [
   (Story) => {
     return (
       <>
-        <ReactYanOverrideProvider overrides={{'fontFamily': 'serif'}}>
+        <ReactYanOverrideProvider value={reactYanOverrides}>
           <GlobalReset />
           <div className="storybook-wrapper">
             <Story />
