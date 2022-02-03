@@ -1,19 +1,26 @@
 import styled from 'styled-components';
-import { anchorColor } from '../utilities';
+// import { A } from '../components/Typography';
+// import { anchorColor } from '../utilities';
 
 export default {
   title: 'Anchor Color Mixin',
   component: AnchorColorStory
 };
 
-const A = styled.a`
+const StyledA = styled.a`
   ${anchorColor({ color: '#000' })}
 `;
 
 export const AnchorColorStory = () => {
   return (
-    <A href="https://www.danhemerlein.com" target="_blank">
-      danhemerlein.com
-    </A>
+    <div>
+      {/* <StyledA href="https://www.danhemerlein.com" target="_blank">
+        danhemerlein.com
+      </StyledA>
+
+      <A href="https://www.danhemerlein.com" target="_blank">
+        danhemerlein.com
+      </A> */}
+    </div>
   );
 };

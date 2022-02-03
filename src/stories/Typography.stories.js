@@ -1,4 +1,5 @@
-import { H1, H2, H3, H4, H5, H6, P } from '../components/Typography';
+// import { A, H1, H2, H3, H4, H5, H6, P, Span } from '../components/Typography';
+import { H1, H2, H3, H4, H5, H6, P, Span } from '../components/Typography';
 
 export default {
   title: 'Typography',
@@ -15,6 +16,7 @@ export const TypographyStory = () => {
       <H5>Headline Five</H5>
       <H6>Headline Six</H6>
       <P>Paragraph</P>
+      <Span>Paragraph</Span>
     </>
   );
 };

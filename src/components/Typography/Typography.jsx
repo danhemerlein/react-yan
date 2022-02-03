@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useOverrideContext } from '../../context/OverrideContext';
+import useOverrideContext from '../../context/OverrideContext';
+// import { anchorColor } from '../../utilities';
 import { typeHelper } from './helpers';
 
 const HeadlineOne = styled.h1`
@@ -159,7 +160,7 @@ const HeadlineSix = styled.h6`
   }}
 `;
 
-export const Paragraph = styled.p`
+const Paragraph = styled.p`
   ${({ textAlign }) => {
     return (
       textAlign &&
@@ -188,6 +189,63 @@ export const Paragraph = styled.p`
     return lowercase && `text-transform: lowercase`;
   }};
 `;
+
+const S = styled.span`
+  ${({ textAlign }) => {
+    return (
+      textAlign &&
+      `
+      text-align: ${textAlign};
+    `
+    );
+  }};
+
+  ${({ color }) => {
+    return (
+      color &&
+      `
+      color: ${color};
+    `
+    );
+  }};
+
+  ${({ overrides }) => {
+    return `
+      ${typeHelper(overrides, 'spanFontSize')}
+    `;
+  }}
+`;
+
+const Anchor = styled.a``;
+
+// const Anchor = styled.a`
+//   ${({ textAlign }) => {
+//     return (
+//       textAlign &&
+//       `
+//       text-align: ${textAlign};
+//     `
+//     );
+//   }};
+
+//   ${anchorColor({
+//     color: ({ color }) => {
+//       return color;
+//     },
+//     textDecoration: ({ textDecoration }) => {
+//       return textDecoration;
+//     },
+//     textDecorationHover: ({ textDecorationHover }) => {
+//       return textDecorationHover;
+//     }
+//   })};
+
+//   ${({ overrides }) => {
+//     return `
+//       ${typeHelper(overrides, 'anchorFontFize')}
+//     `;
+//   }}
+// `;
 
 export const H1 = ({ textAlign, children, className, color }) => {
   return (
@@ -280,3 +338,38 @@ export const P = ({ textAlign, lowercase, children, className, color }) => {
     </Paragraph>
   );
 };
+
+export const Span = ({ textAlign, children, className, color }) => {
+  return (
+    <S
+      color={color}
+      className={className}
+      textAlign={textAlign}
+      overrides={useOverrideContext()}
+    >
+      {children}
+    </S>
+  );
+};
+
+// export const A = ({
+//   textAlign,
+//   children,
+//   className,
+//   color,
+//   textDecoration,
+//   textDecorationHover
+// }) => {
+//   return (
+//     <Anchor
+//       textDecoration={textDecoration}
+//       textDecorationHover={textDecorationHover}
+//       color={color}
+//       className={className}
+//       textAlign={textAlign}
+//       overrides={useOverrideContext()}
+//     >
+//       {children}
+//     </Anchor>
+//   );
+// };
