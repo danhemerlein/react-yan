@@ -1,6 +1,6 @@
 {
   "name": "react-yan",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "young and nauseous react component library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

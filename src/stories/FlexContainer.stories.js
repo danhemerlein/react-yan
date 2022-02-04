@@ -1,4 +1,3 @@
-import React from 'react';
 import { FlexContainer } from '../components/FlexContainer';
 import { P } from '../components/Typography';
 
