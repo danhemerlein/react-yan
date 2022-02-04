@@ -6,10 +6,11 @@ FullScreenHeight
 Drawer
 DrawerTrigger
 DrawerUnderlay
+Absolute Container
+Realtive Container
 
 # exported utilities
 fullBleed
 anchorColor
-above
 
 # configerable parameters
