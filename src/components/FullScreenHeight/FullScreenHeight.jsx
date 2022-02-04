@@ -18,10 +18,6 @@ export const FullScreenHeight = ({
 
   const BREAKPOINT = checkForOverride('breakpoints', useOverrideContext());
 
-  console.log(useOverrideContext());
-
-  console.log(BREAKPOINT);
-
   let breakpoint;
 
   const mediaQuery = useMediaQuery({

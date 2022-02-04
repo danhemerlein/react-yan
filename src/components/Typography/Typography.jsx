@@ -1,104 +1,47 @@
-import React from 'react';
 import styled from 'styled-components';
 import { useOverrideContext } from '../../context/OverrideContext';
 import { anchorColor } from '../../utilities';
 import { typeHelper } from './helpers';
 
 const HeadlineOne = styled.h1`
-  ${({ textAlign }) => {
-    return textAlign && `text-align: ${textAlign};`;
-  }};
-
-  ${({ color }) => {
-    return color && `color: ${color};`;
-  }};
-
-  ${({ overrides }) => {
-    return `${typeHelper(overrides, 'headlineOneFontSize')}`;
+  ${({ overrides, color, textAlign }) => {
+    return typeHelper(overrides, 'headlineOneFontSize', color, textAlign);
   }}
 `;
 
 const HeadlineTwo = styled.h2`
-  ${({ textAlign }) => {
-    return textAlign && `text-align: ${textAlign};`;
-  }};
-
-  ${({ color }) => {
-    return color && `color: ${color};`;
-  }};
-
-  ${({ overrides }) => {
-    return `${typeHelper(overrides, 'headlineTwoFontSize')}`;
+  ${({ overrides, color, textAlign }) => {
+    return typeHelper(overrides, 'headlineTwoFontSize', color, textAlign);
   }}
 `;
 
 const HeadlineThree = styled.h3`
-  ${({ textAlign }) => {
-    return textAlign && `text-align: ${textAlign};`;
-  }};
-
-  ${({ color }) => {
-    return color && `color: ${color};`;
-  }};
-
-  ${({ overrides }) => {
-    return `${typeHelper(overrides, 'headlineThreeFontSize')}`;
+  ${({ overrides, color, textAlign }) => {
+    return typeHelper(overrides, 'headlineThreeFontSize', color, textAlign);
   }}
 `;
 
 const HeadlineFour = styled.h4`
-  ${({ textAlign }) => {
-    return textAlign && `text-align: ${textAlign};`;
-  }};
-
-  ${({ color }) => {
-    return color && `color: ${color};`;
-  }};
-
-  ${({ overrides }) => {
-    return `${typeHelper(overrides, 'headlineFourFontSize')}`;
+  ${({ overrides, color, textAlign }) => {
+    return typeHelper(overrides, 'headlineFourFontSize', color, textAlign);
   }}
 `;
 
 const HeadlineFive = styled.h5`
-  ${({ textAlign }) => {
-    return textAlign && `text-align: ${textAlign};`;
-  }};
-
-  ${({ color }) => {
-    return color && `color: ${color};`;
-  }};
-
-  ${({ overrides }) => {
-    return `${typeHelper(overrides, 'headlineFiveFontSize')}`;
+  ${({ overrides, color, textAlign }) => {
+    return typeHelper(overrides, 'headlineFiveFontSize', color, textAlign);
   }}
 `;
 
 const HeadlineSix = styled.h6`
-  ${({ textAlign }) => {
-    return textAlign && `text-align: ${textAlign};`;
-  }};
-
-  ${({ color }) => {
-    return color && `color: ${color};`;
-  }};
-
-  ${({ overrides }) => {
-    return `${typeHelper(overrides, 'headlineSixFontSize')}`;
+  ${({ overrides, color, textAlign }) => {
+    return typeHelper(overrides, 'headlineSixFontSize', color, textAlign);
   }}
 `;
 
 const Paragraph = styled.p`
-  ${({ textAlign }) => {
-    return textAlign && `text-align: ${textAlign};`;
-  }};
-
-  ${({ color }) => {
-    return color && `color: ${color};`;
-  }};
-
-  ${({ overrides }) => {
-    return `${typeHelper(overrides, 'paragraphFontSize')}`;
+  ${({ overrides, color, textAlign }) => {
+    return typeHelper(overrides, 'paragraphFontSize', color, textAlign);
   }}
 
   ${({ lowercase }) => {
@@ -107,47 +50,20 @@ const Paragraph = styled.p`
 `;
 
 const S = styled.span`
-  ${({ textAlign }) => {
-    return textAlign && `text-align: ${textAlign};`;
-  }};
-
-  ${({ color }) => {
-    return color && `color: ${color};`;
-  }};
-
-  ${({ overrides }) => {
-    return `${typeHelper(overrides, 'spanFontSize')}`;
+  ${({ overrides, color, textAlign }) => {
+    return typeHelper(overrides, 'spanFontSize', color, textAlign);
   }}
 `;
 
-// const Anchor = styled.a``;
-
 const Anchor = styled.a`
-  ${({ textAlign }) => {
-    return (
-      textAlign &&
-      `
-      text-align: ${textAlign};
-    `
-    );
-  }};
+  cursor: pointer;
 
-  ${anchorColor({
-    color: ({ color }) => {
-      return color;
-    },
-    textDecoration: ({ textDecoration }) => {
-      return textDecoration;
-    },
-    textDecorationHover: ({ textDecorationHover }) => {
-      return textDecorationHover;
-    }
-  })};
+  ${({ overrides, textAlign }) => {
+    return typeHelper(overrides, 'anchorFontSize', undefined, textAlign);
+  }}
 
-  ${({ overrides }) => {
-    return `
-      ${typeHelper(overrides, 'anchorFontFize')}
-    `;
+  ${({ color, textDecoration, textDecorationHover }) => {
+    return anchorColor({ color, textDecoration, textDecorationHover });
   }}
 `;
 

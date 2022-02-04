@@ -5,7 +5,7 @@ export const fullBleed = ({
   right = false,
   bottom = false,
   left = false,
-  space
+  space = '1.6rem'
 } = {}) => {
   return css`
     ${top && `margin-top: ${space}`};
@@ -16,29 +16,33 @@ export const fullBleed = ({
 };
 
 export const anchorColor = ({
-  color = '#FFF',
-  textDecoration = 'none',
+  color = '#000',
+  textDecoration = 'underline',
   textDecorationHover = 'underline'
 } = {}) => {
   return css`
-    ${textDecoration && `text-decoration: ${textDecoration}`};
-    text-decoration-color: ${color};
-    color: ${color};
-
-    &:visited {
-      ${textDecoration && `text-decoration: ${textDecoration}`};
+    ${textDecoration &&
+    color &&
+    textDecorationHover &&
+    `
       color: ${color};
-    }
+      text-decoration-color: ${color};
+      text-decoration: ${textDecoration};
 
-    &:active {
-      ${textDecoration && `text-decoration: ${textDecoration}`};
-      color: ${color};
-    }
+      &:visited {
+        text-decoration: ${textDecoration};
+        color: ${color};
+      }
 
-    &:hover {
-      ${textDecorationHover && `text-decoration: ${textDecorationHover}`};
+      &:active {
+        text-decoration: ${textDecoration};
+        color: ${color};
+      }
 
-      color: ${color};
-    }
+      &:hover {
+        text-decoration: ${textDecorationHover};
+        color: ${color};
+      }
+    `};
   `;
 };
