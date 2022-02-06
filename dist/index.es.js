@@ -53,9 +53,9 @@ import e,{css as t}from"styled-components";import o from"focus-trap-react";impor
     ${o&&`margin-right: ${i}`};
     ${r&&`margin-bottom: ${i}`};
     ${n&&`margin-left: ${i}`};
-  `,N=({color:e="#000",textDecoration:o="underline",textDecorationHover:r="underline"}={})=>t`
+  `,N=({color:e="inherit",textDecoration:o="underline",textDecorationHover:r="underline"}={})=>t`
     ${o&&e&&r&&`\n      color: ${e};\n      text-decoration-color: ${e};\n      text-decoration: ${o};\n\n      &:visited {\n        text-decoration: ${o};\n        color: ${e};\n      }\n\n      &:active {\n        text-decoration: ${o};\n        color: ${e};\n      }\n\n      &:hover {\n        text-decoration: ${r};\n        color: ${e};\n      }\n    `};
-  `,k=(e,t,o="#000",r="left")=>e&&o&&r&&`\n      text-align: ${r};\n      color: ${o};\n      font-family: ${v("fontFamily",e)};\n      font-size: ${v(t,e)};\n    `,y=e.h1`
+  `,k=(e,t,o="inherit",r="left")=>e&&o&&r&&`\n      text-align: ${r};\n      color: ${o};\n      font-family: ${v("fontFamily",e)};\n      font-size: ${v(t,e)};\n    `,y=e.h1`
   ${({overrides:e,color:t,textAlign:o})=>k(e,"headlineOneFontSize",t,o)}
 `,E=e.h2`
   ${({overrides:e,color:t,textAlign:o})=>k(e,"headlineTwoFontSize",t,o)}

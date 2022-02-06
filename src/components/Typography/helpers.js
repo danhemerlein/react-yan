@@ -3,7 +3,7 @@ import { checkForOverride } from '../../utils';
 export const typeHelper = (
   overrides,
   fontSizeKey,
-  color = '#000',
+  color = 'inherit',
   textAlign = 'left'
 ) => {
   return (

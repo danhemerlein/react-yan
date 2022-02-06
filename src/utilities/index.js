@@ -16,7 +16,7 @@ export const fullBleed = ({
 };
 
 export const anchorColor = ({
-  color = '#000',
+  color = 'inherit',
   textDecoration = 'underline',
   textDecorationHover = 'underline'
 } = {}) => {
