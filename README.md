@@ -1,15 +1,29 @@
 # components
 
 H1, H2, H3, H4, H5, H6, P
-FlexContainer
+
 FullScreenHeight
 Drawer
 DrawerTrigger
 DrawerUnderlay
+
+## containers
+
 Absolute Container
 Realtive Container
+FlexContainer
+
+### optional props
+
+- justify (justify-content)
+- items (align-items)
+- direction (flex-direction)
+- wrap (flex-wrap)
+- height (height)
+- width (height)
 
 # exported utilities
+
 fullBleed
 anchorColor
 
