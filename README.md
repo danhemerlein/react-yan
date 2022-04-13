@@ -10,8 +10,16 @@ DrawerUnderlay
 ## containers
 
 Absolute Container
-Realtive Container
-FlexContainer
+
+### optional props
+
+- top, right, bottom, left
+  Realtive Container
+
+### optional props
+
+- height
+  FlexContainer
 
 ### optional props
 
