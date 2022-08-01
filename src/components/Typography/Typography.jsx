@@ -179,10 +179,16 @@ export const A = ({
   className,
   color,
   textDecoration,
-  textDecorationHover
+  textDecorationHover,
+  href,
+  target,
+  rel
 }) => {
   return (
     <Anchor
+      href={href}
+      target={target}
+      rel={rel}
       textDecoration={textDecoration}
       textDecorationHover={textDecorationHover}
       color={color}
